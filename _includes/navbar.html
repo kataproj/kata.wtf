@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Kata</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            id="navbarBlog" href="{{ site.baseurl }}/blog"
+            aria-current="page"
+            {% if page.url contains '/blog' %}
+              class="nav-link active" 
+            {% else %}
+              class="nav-link" 
+            {% endif %}
+          >
+            Blog
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            id="navbarProjects" href="{{ site.baseurl }}/proj" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false"
+            {% if page.url contains '/proj' %}
+              class="nav-link dropdown-toggle active" 
+            {% else %}
+              class="nav-link dropdown-toggle" 
+            {% endif %}
+          >
+            Projects
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarProjects">
+            <li><a class="dropdown-item" href="{{ site.baseurl }}/proj">All Projects</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="https://ks.kata.wtf"><code>ks</code>: KataScript</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            id="navbarPhilosophy" href="{{ site.baseurl }}/phil" 
+            role="button" data-bs-toggle="dropdown" aria-expanded="false"
+            {% if page.url contains '/phil' %}
+              class="nav-link dropdown-toggle active" 
+            {% else %}
+              class="nav-link dropdown-toggle" 
+            {% endif %}
+          >
+            Philosophy
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarPhilosophy">
+            <li><a class="dropdown-item" href="{{ site.baseurl }}/phil">All Philosophy</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ site.baseurl }}/kpl">Kata Public License (KPL)</a></li>
+            <li><a class="dropdown-item" href="{{ site.baseurl }}/phil/style">Style/Aesthetics</a></li>
+            <li><a class="dropdown-item" href="{{ site.baseurl }}/phil/octalogue">Octalogue</a></li>
+
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

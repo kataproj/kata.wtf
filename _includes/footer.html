@@ -1,0 +1,78 @@
+<!-- footer.html - footer/shared resources that come AFTER page load
+
+-->
+
+<footer class="text-center text-white bg-dark">
+    <div class="container">
+
+        <!-- Social Medias -->
+        <section class="mb-3">
+
+            {%- if site.email -%}
+            <a class="btn btn-outline-light btn-floating m-1 btn-social" href="mailto:{{ site.email }}" role="button">
+                <i class="fa fa-paper-plane"></i>
+            </a>
+            {%- endif -%}
+            {%- if site.github -%}
+            <a class="btn btn-outline-light btn-floating m-1 btn-social" href="https://github.com/{{ site.github }}"
+                role="button">
+                <i class="fab fa-github"></i>
+            </a>
+            {%- endif -%}
+            {%- if site.twitter -%}
+            <a class="btn btn-outline-light btn-floating m-1 btn-social" href="https://twitter.com/{{ site.twitter }}"
+                role="button">
+                <i class="fab fa-twitter"></i>
+            </a>
+            {%- endif -%}
+            {%- if site.instagram -%}
+            <a class="btn btn-outline-light btn-floating m-1 btn-social"
+                href="https://instagram.com/{{ site.instagram }}" role="button">
+                <i class="fab fa-instagram"></i>
+            </a>
+            {%- endif -%}
+        </section>
+
+        <!-- Section: Links -->
+        <section class="">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-3 mb-md-0">
+                    <h5 class="text-uppercase"><a href="/about">ABOUT KATA</a></h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/kpl" class="text-white">Kata Public License (KPL)</a>
+                        </li>
+                        <li>
+                            <a href="/blog" class="text-white">Developer Blog</a>
+                        </li>
+                        <li>
+                            <a class="text-white mono" href="mailto:{{ site.email }}" role="button">
+                                <i class="fa fa-paper-plane"></i>/{{ site.email }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase"><a href="/phil">PHILOSOPHY</a></h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="/phil/style" class="text-white">Style/Aesthetics</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase"><a href="/projects">PROJECTS</a></h5>
+
+                    <ul class="list-unstyled mb-0">
+                        <li>
+                            <a href="https://ks.kata.wtf" class="text-white">KataScript (WIP)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+</footer>

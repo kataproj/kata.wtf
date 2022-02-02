@@ -1,0 +1,39 @@
+---
+layout: default
+permalink: /
+title: Kata Project
+---
+
+<section class="py-3 text-center container">
+    <div class="row py-lg-3">
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <h1 class="fw-light">Kata &mdash; Software Ecosystem</h1>
+            <p class="lead text-muted">Kata allows programmers to write cross-platform software that runs on desktop,
+                web, and HPC platforms from a single source</p>
+            <p>
+                <!--<a href="#" class="btn btn-primary my-2">Main call to action</a>-->
+                <a href="/install" class="btn btn-lg btn-primary"><i class="bi bi-download"></i> Install Kata</a>
+                <a href="/build" class="btn btn-lg btn-secondary"><i class="bi bi-gear"></i> Build Kata</a>
+
+            </p>
+            <p>
+                <a href="https://github.com/{{ site.github }}" class="btn btn-lg btn-info"><i class="fab fa-github"></i>
+                    GitHub</a>
+                <a href="https://twitter.com/{{ site.twitter }}" class="btn btn-lg btn-info"><i class="fab fa-twitter"></i>
+                    Twitter</a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="album">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            {% for post in site.posts %}
+            <div class="col">
+                {% include card-post.html post=post %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

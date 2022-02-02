@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- HTML favicon -->
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/files/logo/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/files/logo/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/files/logo/favicon-16x16.png">
+
+        <!-- RSS feed -->
+        <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="/feed.xml">
+
+        <title>
+            {% if page.title %}
+                {{ page.title }} | {{ site.name }}
+            {% else %}
+                {{ site.tagline }} | {{ site.name }}
+            {% endif %}
+        </title>
+        
+        <!-- TODO: per-page description? -->
+        <meta name="description" content="{{ site.description }}">
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+        <!-- FontAwesome CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+
+        <!-- Fonts -->
+        <!--
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,900&display=swap" rel="stylesheet">
+        -->
+
+        <!-- Github Buttons JS -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+        {% if jekyll.environment == 'production' %}
+            {% if site.googleanalytics %}
+                <!-- Global site tag (gtag.js) - Google Analytics -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-915V33SQY9"></script>
+                <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '{{ site.googleanalytics }}');
+                </script>
+                <!-- no Google Analytics ID given -->
+            {% endif %}
+        {% else %}
+            <!-- WARN: not in production mode (so things like Google Analytics won't work) -->
+        {% endif%}
+
+        <!-- Prism.js - code highlighting -->
+
+        <!-- Prism.js CSS -->
+        <link rel="stylesheet" href="/css/prism.css">
+        <!-- Prism.js JS -->
+        <script async src="/js/prism.js"></script>
+
+        <!-- KaTeX - math rendering -->
+
+        <!-- KaTeX CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css" integrity="sha384-zTROYFVGOfTw7JV7KUu8udsvW2fx4lWOsCEDqhBreBwlHI4ioVRtmIvEThzJHGET" crossorigin="anonymous">
+
+        <!-- KaTeX JS, but defer the loading to speed up page rendering -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js" integrity="sha384-GxNFqL3r9uRJQhR+47eDxuPoNE7yLftQM8LcxzgS4HT73tp970WS/wV5p8UzCOmb" crossorigin="anonymous"></script>
+
+        <!-- KaTeX auto-render extension, so blocks are automatically created -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"
+            onload='renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "\\[", right: "\\]", display: true},
+                    {left: "$", right: "$", display: false},
+                    {left: "\\(", right: "\\)", display: false}
+                ]
+            })'>
+        </script>
+
+        <!-- kata.wtf CSS -->
+        <link rel='stylesheet' href='/css/main.css' type='text/css'>
+        
+        <!-- kata.wtf JS -->
+        <script src="/js/main.js"></script>
+
+    </head>
+    <!-- we add some classes for prism.js, for global plugins -->
+    <body class="match-braces line-numbers">
+        {% include navbar.html %}
+
+        <div class="main">
+            {{ content }}
+        </div>
+        
+        {% include footer.html %}
+
+        <!-- Required JavaScript libs -->
+
+        <!-- Bootstrap JS bundle -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    </body>
+</html>

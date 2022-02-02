@@ -1,0 +1,49 @@
+# _config.yml - kata.wtf Jekyll configuration
+#
+#
+#
+# @author: Cade Brown <me@cade.site>
+
+# these are all standard SEO vars
+# SEE: https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
+title: "Kata"
+tagline: "Software ecosystem and projects"
+description: "Kata is a software ecosystem for web, mobile, desktop, and HPC applications"
+url: kata.wtf
+logo: /logo.webp
+
+social:
+  name: "Kata Project"
+  links:
+    - https://twitter.com/kataproj
+    - https://github.com/kataproj
+
+# link to a blog post page
+permalink: /blog/:title
+
+# seperator that tells where the 'more' text ends for description generation
+# NOTE: should be an HTML comment
+sep_more: <!--more-->
+
+kramdown:
+  #parse_block_html: true
+  # disable the default syntax highligher (since we use Prism.js)
+  syntax_highlighter_opts:
+    disable: true
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-feed
+
+# Google Analytics ID (comment to disable)
+googleanalytics: G-915V33SQY9
+
+# your primary email
+email: info@kata.wtf
+# GitHub username, or username/project
+github: kataproj
+# Twitter username
+twitter: kataproj

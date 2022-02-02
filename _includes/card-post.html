@@ -1,0 +1,13 @@
+<div class="card h-100 bg-dark">
+  <a href="{{ post.url }}"><img src="{{ post.image }}" class="card-img-top img-fluid" alt="Post Thumbnail"></a>
+
+  <div class="card-body d-flex flex-column">
+    <a style="text-decoration: none !important;" href="{{ post.url }}"><h4 class="card-title">{{ post.title }}</h4></a>
+    <p class="card-text">{{ post.excerpt | strip_html | truncate: 420 }}</p>
+    <div class="mt-auto">
+      <small class="text-muted">
+        {{ post.date | date: '%Y-%m-%d' }} <a href='mailto:{{ post.email }}'>{{ post.author }} &lt;{{ post.email }}&gt;</a>
+      </small>
+    </div>
+  </div>
+</div>
